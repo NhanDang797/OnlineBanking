@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "ChoseStatementType";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-12 col-lg-8">
+        <div class="card">
+            <div class="card-header">
+                Chose your statement
+            </div>
+            <div class="card-body">
+                <form action="~/Transactions/GetStatement/" method="post">
+                    <div class="form-group">
+                        <small class="text-muted">Account number</small>
+                        @Html.DropDownList("originatoraccount", new SelectList(ViewBag.SourceAccountNumber, "Text", "Value"), new { @class = "form-control" , @name = "originatoraccount" })
+
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Statement type</small>
+                        <select class="form-control" id="dropdown-statement-type" name="dropdownstatementtype">
+                            <option value="1">Annually</option>
+                            <option value="2" selected>Monthly</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Year</small>
+                        <select class="form-control" id="year-dropdown" name="yeardropdown">
+                            <option value="2019">2019</option>
+                            <option value="2018">2018</option>
+                            <option value="2017">2017</option>
+                        </select>
+                    </div>
+                    <div class="form-group" id="month-select">
+                        <small class="text-muted">Month</small>
+                        <select class="form-control" id="month-dropdown" name="monthdropdown">
+                            <option value="1">Jan</option>
+                            <option value="2">Feb</option>
+                            <option value="3">Mar</option>
+                            <option value="4">Apr</option>
+                            <option value="5">May</option>
+                            <option value="6">Jun</option>
+                            <option value="7">Jul</option>
+                            <option value="8">Aug</option>
+                            <option value="9">Sep</option>
+                            <option value="10">Oct</option>
+                            <option value="11">Nov</option>
+                            <option value="12">Dec</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="request">Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="col-2"></div>
+</div>
+
+<script src="~/Content/Client/js/jquery-3.3.1.js"></script>
+<script src="~/Content/Client/js/phuong.js"></script>

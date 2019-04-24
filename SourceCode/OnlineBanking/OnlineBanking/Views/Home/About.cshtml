@@ -1,0 +1,178 @@
+﻿@{
+    ViewBag.Title = "About us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+
+<style>
+
+    #header {
+        background: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.1)), url("/Content/Client/img/about.jpg") no-repeat center center;
+        height: 350px;
+        background-size: cover;
+    }
+
+    .test1 {
+        margin-top: 10px;
+        padding: 20px 5px 0 20px;
+    }
+
+    .test {
+        margin-top: 10px;
+        padding: 20px 5px 0 20px;
+        text-align: left;
+        height: 200px;
+        background-color: #1b9ca0;
+        color: white;
+        transition: 0.5s;
+    }
+
+        .test p, .test h3 {
+            transition: 1s;
+        }
+
+        .test:hover {
+            box-shadow: 2px 3px 10px #888888;
+            background-color: white;
+        }
+
+            .test:hover p {
+                color: black;
+            }
+
+            .test:hover h3 {
+                color: #1b9ca0;
+            }
+</style>
+
+<div class="row">
+    <div class="col-12">
+        <!--Header-->
+        <div id="header" style="padding-left:20px;padding-top:100px;color:white;z-index:100">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 pull-left">
+                    <h1 class="text-center" style="font-weight:bold">Online Banking</h1>
+                    <p style="text-shadow:  3px 3px 2px grey;">Online Banking is one of the leading joint stock commercial banks in India, with the branch network system nationally with nearly 9000 employees and many various products and services.</p>
+                </div>
+            </div>
+        </div>
+        <!--Header-->
+
+        <hr />
+
+        <!--Misson-->
+        <h1 class="text-center">Our mission</h1>
+        <p class="text-center" style="width:500px; margin:10px auto;font-size:0.8em">
+            Online Banking always accompanies, shares and provides the best financial and banking services for customers; commits to deliver the best values to shareholders; creates a professional, friendly working environment, career opportunities and rewarding benefits for all employees; and is a pioneer in community development.
+        </p>
+        <div class="row">
+            <div class="col-xl-3 col-12">
+                <div class="test">
+                    <h3>History</h3>
+                    <p>A glance at Online Banking history   </p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-12">
+                <div class="test">
+                    <h3>Leadership</h3>
+                    <p>Talented and dedicated people who outline strategic vision to lead the bank to successes</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-12">
+                <div class="test">
+                    <h3>Branding</h3>
+                    <p>Online Banking is proud to be the longest-established financial institution in India</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-12">
+                <div class="test">
+                    <h3>Gallery</h3>
+                    <p>Online Banking photos and videos</p>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <h1 class="text-center">Lines of business</h1>
+        <div class="row">
+            <div class="col-xl-3 col-12">
+                <div class="test1">
+                    <img src="~/Content/Client/img/banking.png" />
+                    <br />
+                    <br />
+                    <h3>Banking</h3>
+                    <p>A full range of modern and convenient banking products and services</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-12">
+                <div  class="test1">
+                    <img src="~/Content/Client/img/insurance.png" />
+                    <br />
+                    <br />
+                    <h3>Insurance</h3>
+                    <p>Life and non-life insurance product bundles are tailored to the needs of each customer</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-12">
+                <div  class="test1">
+                    <img src="~/Content/Client/img/securities.png" />
+                    <br />
+                    <br />
+                    <h3>Securities</h3>
+                    <p>Diverse brokerage, investment and consultancy services, with the ability of quickly developing agents</p>
+                </div>
+            </div>
+            <div class="col-xl-3 col-12">
+                <div  class="test1">
+                    <img src="~/Content/Client/img/investment.png" />
+                    <br />
+                    <br />
+                    <h3>Financial Investment</h3>
+                    <p>Contributing capital for investment in projects, taking the lead in key national projects</p>
+                </div>
+            </div>
+        </div>
+        <!--Misson-->
+
+        <hr />
+
+        <!--Lines of business-->
+        <h1 class="text-center" style="color:#1b9ca0">Awards and Accolades</h1>
+        <p class="text-center" style="width:500px; margin:10px auto;font-size:0.8em">
+            Online Banking has been recognized and awarded by many international and major financial institutions for its outstanding business performance. The bank is listed in the Top 500 world’s most valuable banking brands (by Brand Finance), named “Best Retail Bank in Vietnam” for the fourth consecutive year (by The Asian Banker) and received a series of IT awards. Since 2009, BIDV has ranked first amongst Vietnamese commercial banks in terms of readiness for IT application and development in the Vietnam ICT Index of Vietnam Ministry of Information and Communications and Vietnam Association for Information Processing.
+        </p>
+        <div class="row" style="padding: 50px 150px;">
+            <div class="col-12 text-center">
+                <div>
+                    <img src="~/Content/Client/img/Awards and Accolades/1.png" />
+                    <img src="~/Content/Client/img/Awards and Accolades/2.png" />
+                    <img src="~/Content/Client/img/Awards and Accolades/3.png" />
+                    <img src="~/Content/Client/img/Awards and Accolades/4.png" />
+                    <img src="~/Content/Client/img/Awards and Accolades/5.png" />
+                </div>
+                <div>
+                    <img src="~/Content/Client/img/Awards and Accolades/6.png" />
+                    <img src="~/Content/Client/img/Awards and Accolades/7.png" />
+                    <img src="~/Content/Client/img/Awards and Accolades/8.png" />
+                    <img src="~/Content/Client/img/Awards and Accolades/9.png" />
+                </div>
+            </div>
+        </div>
+        <!--Lines of business-->
+    </div>
+</div>
+
+<script>
+    $(window).resize(function(){
+ 
+    var width = $(window).width();
+    if (width <= 768){
+        $('body').append('<link href="mobile.css"/>');
+    }
+    else{
+        $('body').append('<link href="desktop.css"/>');
+    }
+ 
+});
+</script>

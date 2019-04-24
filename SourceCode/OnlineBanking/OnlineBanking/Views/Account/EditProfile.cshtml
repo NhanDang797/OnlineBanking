@@ -1,0 +1,145 @@
+﻿@model OnlineBanking.Models.Customer
+@{
+    ViewBag.Title = "EditProfile";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+    List<SelectListItem> items = new List<SelectListItem>();
+    items.Add(new SelectListItem
+    {
+        Text = "Binh Tan",
+        Value = "1"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Thu Duc",
+        Value = "2",
+        Selected = true
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Binh Chanh",
+        Value = "3"
+    });
+    items.Add(new SelectListItem
+    {
+        Text = "Tan Binh",
+        Value = "3"
+    });
+
+    List<SelectListItem> item = new List<SelectListItem>();
+    item.Add(new SelectListItem
+    {
+        Text = "Ho Chi Minh",
+        Value = "1"
+    });
+    item.Add(new SelectListItem
+    {
+        Text = "Ha Noi",
+        Value = "2",
+        Selected = true
+    });
+    item.Add(new SelectListItem
+    {
+        Text = "Vung Tau",
+        Value = "3"
+    });
+    item.Add(new SelectListItem
+    {
+        Text = "Can Tho",
+        Value = "3"
+    });
+
+
+}
+
+<style>
+    #choice {
+        color: darkblue;
+        font-weight: bold;
+        font-size: 20px
+    }
+</style>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.CustomerId)
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Dashboard</a>
+            </li>
+            <li class="breadcrumb-item active">Customer Profile</li>
+        </ol>
+
+        <!--Body-->
+        <div class="card mb-3">
+            <div class="card-header" id="choice">
+                Profile
+            </div>
+            <div class="card-body">
+
+                
+                <div class="form-group">
+                    @Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.EditorFor(model => model.LastName)
+                    @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.EditorFor(model => model.FirstName)
+                    @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-3" })
+                    <label>@Html.RadioButtonFor(m => m.Gender, "Male", new { Checked = "checked" }) Male</label>
+                    <label>@Html.RadioButtonFor(m => m.Gender, "Female", new { Checked = "checked" }) Female</label>
+                </div>
+            </div>
+        </div>
+        <!--Show Request-->
+        <div class="card mb-3">
+            <div class="card-header" id="choice">
+                Address Info
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.EditorFor(model => model.Address)
+                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+        <div class="card mb-3">
+            <div class="card-header" id="choice">
+                Contact Info
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-3" })
+                    @Html.EditorFor(model => model.Email)
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                </div>
+
+                <div class="form-group">
+                @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-3" })
+                @Html.EditorFor(model => model.PhoneNumber)
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+             
+        </div>
+    </div>
+    <div style="margin-left: 350px; margin-bottom: 10px; ">
+        <button type="submit" value="submit">Save</button>
+    </div>
+        </div>
+}

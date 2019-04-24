@@ -1,0 +1,145 @@
+html {
+    /*margin-top: 55px;*/
+}
+
+.masthead {
+    height: 60vh;
+    min-height: 300px;
+    background-image: url('../img/FinancialFree.jpg');
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+.full-width-image {
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    margin-left: -50vw;
+    margin-top: -20px;
+}
+
+    .full-width-image img {
+        width: 100%;
+    }
+
+.contact-by {
+    list-style-type: none;
+}
+
+#map {
+    height: 400px; /* The height is 400 pixels */
+    width: 100%; /* The width is the width of the web page */
+}
+
+.vertical-menu a {
+    /*width: 180px;  Set a width if you like */
+    opacity: 0.3;
+}
+
+.vertical-menu a {
+    background-color: #eee; /* Grey background color */
+    color: black; /* Black text color */
+    display: block; /* Make the links appear below each other */
+    padding: 12px; /* Add some padding */
+    text-decoration: none; /* Remove underline from links */
+}
+
+    .vertical-menu a:hover {
+        background-color: #ccc; /*Dark grey background on mouse-over */
+    }
+
+    .vertical-menu a.active {
+        background-color: #1b9ca0; /* Add a green color to the "active/current" link */
+        color: white;
+        opacity: 1;
+    }
+
+footer {
+    /*  background-color: #f2f2f2;
+  color: #333;*/
+    background-color: #1b9ca0;
+}
+
+a {
+    color: #1b9ca0;
+}
+
+.page-link {
+    color: #1b9ca0;
+}
+
+.page-item.active .page-link {
+    background-color: #1b9ca0;
+    border-color: #1b9ca0;
+}
+
+.bg-primary {
+    background-color: #1b9ca0 !important;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b9ca0;
+    border-color: #1b9ca0;
+}
+
+    .btn-primary:hover {
+        background-color: #168286 !important;
+        border-color: #168286 !important;
+        outline: none;
+        box-shadow: none;
+    }
+
+.fund-transfer {
+    color: red;
+}
+
+.success {
+    color: green;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-header.bg-success {
+    font-weight: bold;
+    color: white;
+}
+
+.list-inline ul {
+    margin: auto;
+    /*  background-color: #CCC;*/
+    width: 1200px;
+}
+
+.list-inline li {
+    display: inline-block;
+    padding: 0px 12px;
+    /*background-color: cadetblue;*/
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+}
+
+html, body {
+    height: 100%;
+}
+
+.wrapper {
+    min-height: 100%;
+    margin-top: 0px;
+    padding-top: 55px;
+    margin-bottom: -115px;
+    padding-bottom: 132px;
+}
+
+footer {
+    height: 115px;
+}
+
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 992px) {
+    .vertical-menu a {
+        text-align: center;
+    }
+}

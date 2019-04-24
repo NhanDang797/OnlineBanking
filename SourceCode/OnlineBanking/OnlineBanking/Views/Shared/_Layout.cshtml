@@ -1,0 +1,99 @@
+﻿
+
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/Content/Client/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/Client/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="~/Content/Client/css/homepage.css">
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar  navbar-expand-lg navbar-dark bg-primary fixed-top">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/About">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/Faqs">FAQ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Home/Contact">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="/">Online Banking</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Login/Login">Login</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+    <div class="wrapper">
+        <div class="container-fluid mt-3">
+            <!-- Content here -->
+            <div class="row">
+                
+                <div class="col-12 ">
+                    @RenderBody()
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer class="page-footer font-small text-white pt-2">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-inline">
+                        <li><a href="/Home/Term" class="text-white">Terms &amp; Conditions</a></li>
+                        <li><a href="/Home/Privacy" class="text-white">Privacy &amp; Security</a></li>
+                        <li><a href="/Home/Contact" class="text-white">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Footer Links -->
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">
+            © 2019 Copyright:
+            <a class="text-white">OnlineBanking.com</a>
+        </div>
+        <!-- Copyright -->
+
+    </footer>
+    <!-- Footer -->
+    <!-- Optional JavaScript -->
+    <script src="~/Content/Client/js/jquery-3.3.1.js"></script>
+    <script src="~/Content/Client/js/popper.min.js"></script>
+    <script src="~/Content/Client/js/bootstrap.min.js"></script>
+    <script src="~/Content/Client/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/Client/js/dataTables.bootstrap4.min.js"></script>
+    <script src="~/Content/Client/js/homepage.js"></script>
+
+</body>
+
+
+</html>

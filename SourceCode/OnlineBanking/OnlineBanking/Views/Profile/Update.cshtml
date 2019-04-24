@@ -1,0 +1,95 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+@model OnlineBanking.Models.ProfileModel
+
+@*BODY*@
+<body>
+    @using (Html.BeginForm("Update", "Profile", FormMethod.Post))
+    {
+        <div class="row ">
+            <div class="col-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading text-center"><h2>Edit profile</h2></div>
+                    
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Address, new { @for = "add", @class = "control-label col-sm-3" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.Address, new { @id = "add", @class = "form-control", @placeholder = @ViewBag.Address, @onkeyup = "testAdd()" })
+                                    @Html.ValidationMessageFor(m => m.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            @*Password*@
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.LoginPassword, new { @for = "lpass", @class = "control-label col-sm-3" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.LoginPassword, new { @id = "lpass", @class = "form-control", @placeholder = "********", @onkeyup = "testAdd()", @type = "password" })
+                                    @Html.ValidationMessageFor(m => m.LoginPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @*ConfirmPassword*@
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmPassword, new { @for = "clpass", @class = "control-label col-sm-3" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.ConfirmPassword, new { @id = "clpass", @class = "form-control", @placeholder = "********", @type = "password"})
+                                    @Html.ValidationMessageFor(m => m.ConfirmPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @*TransactionPassword*@
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.TransactionPassword, new { @for = "tpass", @class = "control-label col-sm-3" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.TransactionPassword, new { @id = "tpass", @class = "form-control", @placeholder = "********", @onkeyup = "testAdd()", @type = "password"})
+                                    @Html.ValidationMessageFor(m => m.TransactionPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            @*ConfirmTransactionPassword*@
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.ConfirmTransactionPassword, new { @for = "ctpass", @class = "control-label col-sm-3" })
+                                <div class="col-sm-9">
+                                    @Html.TextBoxFor(m => m.ConfirmTransactionPassword, new { @id = "ctpass", @class = "form-control", @placeholder = "********", @type = "password"})
+                                    @Html.ValidationMessageFor(m => m.ConfirmTransactionPassword, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                        <div style="margin-left:2px;" class="col-9 row">
+                            <a href="/Profile/Profile" style="background-color:#1b9ca0; color:white" class="col btn btn-lg">Back to profile</a>
+                            <button id="update" type="submit" style="background-color:#1b9ca0; color:white;margin-left:10px;display:none" class="col btn btn-lg">Update profile</button>
+                        </div>   
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+
+</body>
+@Html.Raw(TempData["msg"])
+<script>
+    var add = document.getElementById("add");
+    var lpass = document.getElementById("lpass");
+    var clpass = document.getElementById("clpass");
+    var tpass = document.getElementById("tpass");
+    var ctpass = document.getElementById("ctpass");
+    var btn = document.getElementById("update");
+
+    add.value = "";
+    lpass.value = "";
+    clpass.value = "";
+    tpass.value = "";
+    ctpass.value = "";
+
+    function testAdd() {
+        if (add.value != "" || lpass.value != "" || tpass.value != "") {
+            btn.style.display = "block";
+        }
+        else
+        {
+            btn.style.display = "none";
+        }
+    }
+</script>

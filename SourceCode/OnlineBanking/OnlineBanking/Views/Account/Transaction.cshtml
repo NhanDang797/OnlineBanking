@@ -1,0 +1,80 @@
+﻿ @model IEnumerable<OnlineBanking.Models.Transaction>
+@using GridMvc.Html
+ 
+@{
+    ViewBag.Title = "Transaction";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+
+}
+    
+    <style>
+        #choice {
+            color: blue;
+        }
+
+        .pagination{
+            margin-top : 10px;
+        }
+         
+            .pagination a {
+                color: black;
+                float: left;
+                padding: 8px 16px;
+                text-decoration: none; 
+                border: 1px solid #ddd;
+                
+            }
+
+                .pagination a.active {
+                    background-color: #4CAF50;
+                    color: white;
+                    border: 1px solid #4CAF50;
+                }
+
+                .pagination a:hover:not(.active) {
+                    background-color: #ddd;
+                   
+                }
+
+    </style>
+    <div id="content-wrapper" >
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="/Account/AccountList">Account</a>
+                </li>
+                <li class="breadcrumb-item active">Transaction</li>
+            </ol>
+            <!-- DataTables Example -->
+            <div>
+                <table class="table table-striped" >
+                    <thead>
+                        <tr>
+                            <th scope="col">Account number</th>
+                            <th scope="col">Account Balance</th>
+                            <th scope="col">Create Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model) {
+                            <tr>
+                                <td>@Html.DisplayFor(model => item.SourceAccountNumber)</td>
+                                <td>@Html.DisplayFor(model => item.Balance)</td>>
+                                <td>@Html.DisplayFor(model => item.Date)</td>>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+
+            </div>
+         
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+
+    <script src="~/Content/Client/js/jquery-3.3.1.js"></script>
+    <script src="~/Content/Client/js/trang.js"></script>
+  

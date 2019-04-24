@@ -1,0 +1,52 @@
+﻿@model OnlineBanking.Models.Customer
+@{
+    ViewBag.Title = "AccountList";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Account</a>
+            </li>
+            <li class="breadcrumb-item active">Detail</li>
+        </ol>
+        <!-- DataTables Example -->
+        <div class="col-10">
+            <h3>List Account Banking</h3>
+            <table class="table table-striped" id="table-bankacc" style="cursor:pointer">
+                <thead>
+                    <tr>
+                        <th scope="col">Account number</th>
+                        <th scope="col">Account Balance</th>
+                        <th scope="col">Create Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    @foreach (var item in Model.BankAccounts) {
+                        <tr data-id="@item.AccountNumber">
+                            <td>@Html.DisplayFor(model => item.AccountNumber)</td>
+                            <td>@Html.DisplayFor(model => item.Balance)</td>
+                            <td>@Html.DisplayFor(model => item.CreateDate)</td>
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
+
+<script src="~/Content/Client/js/jquery-3.3.1.js"></script>
+<script src="~/Content/Client/js/bootstrap.min.js"></script>
+<!-- plugin using for ajax jquery-->
+<script src="~/Content/Admin/js/mustache.min.js"></script>
+<script src="~/Content/Client/js/chequeT.js"></script>

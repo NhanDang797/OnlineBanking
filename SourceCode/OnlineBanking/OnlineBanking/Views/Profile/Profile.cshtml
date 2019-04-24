@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+@model OnlineBanking.Models.ProfileModel
+
+
+@*BODY*@
+<div class="row ">
+    <div class="col-12">
+        <div class="panel panel-default">
+            <div class="panel-heading text-left "> <h2>Customer' Information</h2></div>
+            <div class="panel-body">
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="fname">First Name :</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="fname" value="@ViewBag.FirstName" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="lname">Last Name :</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="lname" value="@ViewBag.LastName" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="phone">Phone :</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="phone" value="@ViewBag.Phone" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="email">Email :</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="email" value="@ViewBag.Email" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="address">Address :</label>
+                        <div class="col-sm-9">
+                            <textarea cols="10" rows="5" class="form-control" id="address" readonly>@ViewBag.Address</textarea>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-3" for="pwd">Gender :</label>
+                        <div class="col-sm-9">
+                            <input type="text" class="form-control" id="email" value="@ViewBag.Gender" readonly>
+                        </div>
+                    </div>
+                </div>
+                <a href="/Profile/Update" style="background-color:#1b9ca0; width:70% ; margin-left: 13px; color:white" class="btn btn-block" >Edit Profile</a>
+            </div>
+        </div>
+    </div>
+</div>

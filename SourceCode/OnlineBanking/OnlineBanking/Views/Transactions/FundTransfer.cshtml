@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "FundTransfer";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-12 col-lg-8">
+        @*fund transfer*@
+        <div class="card" id="fund-transfer">
+            <div class="card-header">
+                Transfer information
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="form-group">
+                        <small class="text-muted">Originator account</small>
+                        @Html.DropDownList("originator-account", new SelectList(ViewBag.SourceAccountNumber, "Text", "Value"), new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Benificial account</small>
+                        <input class="form-control" id="benificial-account" placeholder="Beneficiary account number">
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Amount</small>
+                        <input type="number" min="1" class="form-control" id="amount" placeholder="Amount of money">
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Description</small>
+                        <input class="form-control" id="content" placeholder="Transfer description">
+                    </div>
+                    <button class="btn btn-primary" id="btn-fund-transfer">Continue</button>
+                </div>
+                <p id="error-message" class="text-danger mt-1"> </p>
+            </div>
+        </div>
+
+        @*transfer-confirm*@
+        <div class="card" id="transfer-confirm" style="display: none;">
+            <div class="card-header">
+                Transfer confirm
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="form-group">
+                        <small class="text-muted">Originator account</small>
+                        <p id="originator-account"></p>
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Benificial account</small>
+                        <p class="fund-transfer" id="benificial-account"></p>
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Amount</small>
+                        <p class="fund-transfer" id="amount">500 </p>
+                    </div>
+                    <div class="form-group">
+                        <small class="text-muted">Content</small>
+                        <p id="content"></p>
+                    </div>
+                    <button class="btn btn-primary" id="btn-confirm-transfer">Continue</button>
+                </div>
+            </div>
+        </div>
+
+        @*password-confirm*@
+        <div class="card" id="password-confirm" style="display: none;">
+            <div class="card-header">
+                Enter transaction password
+            </div>
+            <div class="card-body">
+                <div>
+                    <div class="form-group">
+                        <small class="text-muted">Transaction password</small>
+                        <input class="form-control" type="password" id="transaction-password" placeholder="">
+                    </div>
+                    <button class="btn btn-primary" id="btn-confirm-password">Confirm</button>
+                </div>
+                <p id="error-message" class="text-danger mt-1"> </p>
+
+            </div>
+        </div>
+
+        @*success*@
+        <div class="card" id="success-notify" style="display: none;">
+            <div class="card-header bg-success">
+                Successful transfer
+            </div>
+            <div class="card-body">
+                <p> You have successfully transferred <span class="success" id="amount"></span> to <span class="success" id="benificial-name"></span> account number <span class="success" id="benificial-account"></span></p>
+                <a href="/Account/AccountList" class="btn btn-light">Back to your accounts</a>
+            </div>
+        </div>
+
+        
+    </div>
+    <div class="col-2"></div>
+
+</div>
+<script src="~/Content/Client/js/jquery-3.3.1.js"></script>
+<script src="~/Content/Client/js/phuong.js"></script>

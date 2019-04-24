@@ -1,0 +1,98 @@
+﻿@model List < OnlineBanking.Models.StatementDTO >
+    @*@using OnlineBanking.Models; *@
+
+@{
+    ViewBag.Title = "MonthlyStatement";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+
+<h2>Monthly Statement</h2>
+<div class="row">
+    <div class="col-12 col-lg-6">
+        <table class="table table-borderless">
+            <tbody>
+                <tr>
+                    <td>Year</td>
+                    <td>
+                        @ViewBag.DisplayYear
+                    </td>
+                </tr>
+                <tr>
+                    <td>Month</td>
+                    <td>
+                        @ViewBag.DisplayMonth
+                    </td>
+                </tr>
+                <tr>
+                    <td>Account number</td>
+                    <td>@ViewBag.DisplayAccNumber</td>
+                </tr>
+                <tr>
+                    <td>Account name</td>
+                    <td>@ViewBag.DisplayAccName</td>
+                </tr>
+                <tr>
+                    <td>Date</td>
+                    <td>@ViewBag.DisplayDate</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="col-12 col-lg-6">
+        <table class="table table-borderless">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col" colspan="2">Account Summary</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Opening Balance</td>
+                    <td class="font-weight-bold">
+                        @ViewBag.DisplayOpenBalance
+                    </td>
+                </tr>
+                <tr>
+                    <td>Payment in</td>
+                    <td class="font-weight-bold">@ViewBag.DisplayPaymentIn</td>
+                </tr>
+                <tr>
+                    <td>Payment out</td>
+                    <td class="font-weight-bold">@ViewBag.DisplayPaymentOut</td>
+                </tr>
+                <tr>
+                    <td>Closing Balance</td>
+                    <td class="font-weight-bold">@ViewBag.DisplayClosingBalance</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Transaction Description</th>
+            <th scope="col">Paid In</th>
+            <th scope="col">Paid Out</th>
+            <th scope="col">Balance</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Date</td>
+                <td>@item.Description</td>
+                <td>@item.PaidIn </td>
+                <td>@item.PaidOut </td>
+                <td>@item.Balance</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div class="text-right">
+    <button type="button" class="btn btn-primary" onclick="window.print();">Print statement</button>
+</div>
+

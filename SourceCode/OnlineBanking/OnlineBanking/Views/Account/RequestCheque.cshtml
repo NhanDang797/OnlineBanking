@@ -1,0 +1,141 @@
+﻿@model OnlineBanking.Models.Customer
+@{
+    ViewBag.Title = "RequestCheque";
+    Layout = "~/Views/Shared/_LayoutCustomer.cshtml";
+}
+<script type="text/javascript">
+    window.onload = function () {
+        GetDate();
+    };
+    function GetDate() {
+        var dt = new Date();
+        var dd;
+        var mm;
+        var yyyy;
+        var date;
+        var month;
+        dd = dt.getDate();
+        mm = dt.getMonth() + 1;
+        document.getElementById('txtDate').value = mm + '/' + dd + '/' + dt.getFullYear();
+
+    }
+</script>
+<style>
+    #choice {
+        color: blue;
+    }
+</style>
+<div id="content-wrapper">
+    <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="#">Account</a>
+            </li>
+            <li class="breadcrumb-item active">Request Cheque Book</li>
+        </ol>
+        <!-- DataTables Example -->
+        <div class="col-15">
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-1x"></i>
+                    Customer name: @Html.DisplayFor(model => model.FirstName)  @Html.DisplayFor(model => model.LastName)
+                </div>
+                <!--Body-->
+                <div class="card-body">
+                    <div class="col-10">
+                        <table class="table table-borderless" id="dataTables">
+                            <tbody>
+                                <tr>
+                                    <td style="font-weight:bold">Account Number</td>
+                                    <td>
+                                        <select class="form-control" id="bankacc">
+                                            @foreach (var item in Model.BankAccounts) {
+                                                <option value="@item.AccountNumber">@item.AccountNumber</option>
+                                            }
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="font-weight:bold">Date of Issue</td>
+                                    <td><input type="text" class="form-control" id="txtDate" runat="server" readonly /></td>
+                                </tr>
+
+                                <tr>
+                                    <td style="font-weight:bold">Cheque Leaves Number</td>
+                                    <td>
+                                        <select class="form-control" id="numberofCheque">
+                                            <option value="5">5</option>
+                                            <option value="10">10</option>
+                                            <option value="15">15</option>
+                                            <option value="20">20</option>
+                                            <option value="30">30</option>
+                                        </select>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="colspan"><button id="btn-save" type="button" value="submit" class="btn btn-primary">Submit</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+        <!--Show Request-->
+        <div class="card mb-3">
+            <div class="card-header">
+                Request Cheque Book List
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-striped" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>Account Number</th>
+                                <th>Number Cheque Request</th>
+                                <th>Date of Issue</th>
+                                <th>Date of Expriry</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        @*<tbody id="tbl-data"></tbody>*@
+                        <tbody>
+                            @foreach (var cheque in ViewBag.listCheque) {
+                                <tr>
+                                    <td>@cheque.AccountNumber</td>
+                                    <td>@cheque.NumberOfChequeBook</td>
+                                    <td>@cheque.IssuedDate</td>
+                                    <td>@cheque.EndDate</td>
+                                    <td>
+                                        @if (@cheque.Status == true) {
+
+                                            <button class="btn btn-primary" data-id="@cheque.AccountNumber" id="btn-actived"><i class="ace-icon fa fa-refresh bigger-140"> Actived</i></button>
+                                        }
+                                        @if (@cheque.Status == false) {
+
+                                            <button class="btn btn-danger" data-id="@cheque.AccountNumber" id="btn-blocked"><i class="ace-icon fa fa-refresh bigger-140"> InActive</i></button>
+                                        }
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.container-fluid -->
+</div>
+
+<script src="~/Content/Client/js/jquery-3.3.1.js"></script>
+<script src="~/Content/Client/js/bootstrap.min.js"></script>
+<!-- plugin using for ajax jquery-->
+<script src="~/Content/Admin/js/mustache.min.js"></script>
+<script src="~/Content/Client/js/chequeT.js"></script>
